@@ -9,7 +9,8 @@ class Writing:
     features = Features.Features()
 
     def __init__(self):
-        openai.api_key=st.session_state.api_key
+        # openai.api_key=st.session_state.api_key
+        openai.api_key = st.secrets["OPENAI_KEY"]
 
     def write(self, dyn_prompt, model, temp=0.73, top_p=1.0, tokens=500, freq_pen=1.73, pres_pen=0.43, stop=["END", "Scene:", "[Scene"]):
         if (dyn_prompt ==''):
