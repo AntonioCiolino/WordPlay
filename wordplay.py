@@ -9,7 +9,6 @@ import Writing
 def update_content(args):
     pass
 
-
 # Title of the page
 st.title('WordPlay')
 st.caption("An app that helps users come up with new and interesting words for their writing projects.")
@@ -32,10 +31,10 @@ if 'models' not in st.session_state:
 if 'chapter' not in st.session_state:
     st.session_state.chapter = ""
 
-with st.expander("Enter your API Key"):
-    st.session_state.api_key = st.text_input('API Key', st.session_state.api_key, type='password')
+#with st.expander("Enter your API Key"):
+#    st.session_state.api_key = st.text_input('API Key', st.session_state.api_key, type='password')
 
-if (st.session_state.api_key == ""):
+if st.session_state.api_key == "" and st.secrets["OPENAI_KEY"] == "":
     st.write("You need to enter your API Key to use this app.")
 else:
     st.session_state.features = Features.Features.features

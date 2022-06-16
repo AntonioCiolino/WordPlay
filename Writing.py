@@ -70,7 +70,6 @@ class Writing:
         except Exception as oops:
             st.error('ERROR in get_generic function: ' + str(oops))
 
-
     def getModels(self):
         models = []
         try:
